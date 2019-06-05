@@ -54,11 +54,7 @@ implementation
 
 class procedure TLoading.ChangeMessage(const AMsg: String);
 begin
-  TThread.Synchronize(nil,
-    procedure()
-    begin
-      FLblMessage.Text := AMsg;
-    end);
+  FLblMessage.Text := AMsg;
 end;
 
 class procedure TLoading.FRctBackgroundClick(Sender: TObject);
@@ -135,7 +131,7 @@ begin
   FRctBackground.Parent := FLytBackground;
   FRctBackground.OnClick := FRctBackgroundClick;
 {$ENDREGION}
-  //
+//
 {$REGION 'FRctLoading'}
   FRctLoading := TRectangle.Create(Application.MainForm);
   FRctLoading.Stroke.Kind := TBrushKind.None;
@@ -152,7 +148,7 @@ begin
   FSdwMessage := TShadowEffect.Create(Application.MainForm);
   FSdwMessage.Parent := FRctLoading;
 {$ENDREGION}
-  //
+//
 {$REGION 'FAniIndicator'}
   FAniIndicator := TAniIndicator.Create(Application.MainForm);
   FAniIndicator.Enabled := False;
@@ -162,7 +158,7 @@ begin
   FAniIndicator.Margins.Right := 5;
   FAniIndicator.Width := 50;
 {$ENDREGION}
-  //
+//
 {$REGION 'FAniIndicator'}
   AFillRGBEffect := TFillRGBEffect.Create(Application.MainForm);
   AFillRGBEffect.Parent := FAniIndicator;
@@ -170,7 +166,7 @@ begin
   AFillRGBEffect.Color := StringToAlphaColor(FAniColor);
   // );
 {$ENDREGION}
-  //
+//
 {$REGION 'FLblMessage'}
   FLblMessage := TLabel.Create(Application.MainForm);
   FLblMessage.Parent := FRctLoading;

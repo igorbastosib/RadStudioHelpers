@@ -18,7 +18,8 @@ uses
   FMX.Dialogs,
   FMX.Forms,
 
-  IdeaL.Lib.CommonTypes, FMX.Ani;
+  Helper.CommonTypes,
+  FMX.Ani;
 
 type
   TMessage = class
@@ -94,7 +95,7 @@ class procedure TMessage.AddButtons(const aMsgTypeButton: TMsgTypeButton);
     if not(Assigned(aBtn)) then
       aBtn := TButton.Create(Application.MainForm);
     aBtn.Parent := aParant;
-    aBtn.StyleLookup := 'btnTransparente';
+    aBtn.StyleLookup := 'btnTransparent';
     aBtn.Align := TAlignLayout.Contents;
     aBtn.Text := aTexto;
     aBtn.StyledSettings := [];

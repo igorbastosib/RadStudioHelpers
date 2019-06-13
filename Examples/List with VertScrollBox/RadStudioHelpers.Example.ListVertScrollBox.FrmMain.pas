@@ -85,11 +85,19 @@ begin
         LFil.Detail := LFil.ClassName;
 
         vtsList.AddObject(LFil);
-        TLoading.ChangeMessage('Espere ' + i.ToString);
 
         TThread.Synchronize(nil,
           procedure()
           begin
+            //Adicionei estas atualizacoes da UI apenas para exemplificar que 
+            //eh possivel utilizar Syncronize dentro da Thread, mas essa atitude
+            //nao eh recomendada, visto esta forcando o Application a executar
+            //Atualizacoes da UI
+            //Utilize Synchronize com cautela, estude antes de sair utilizando
+            //Por exemplo, eu utilizei "NIL" apenas pq no contexto do exemplo
+            //nao eh necessario gerir multi-Threads, mas em outros contextos
+            //podera ser necessario trocar NIL por TThread.CurrentThread
+            TLoading.ChangeMessage('Espere ' + i.ToString);
             lblIndex.Text := i.ToString;
           end);
       end;

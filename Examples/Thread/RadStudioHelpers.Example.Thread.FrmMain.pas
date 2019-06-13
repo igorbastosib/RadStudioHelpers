@@ -68,7 +68,7 @@ begin
           begin
             Button1.Text := i.ToString;
           end);
-        Sleep(5);
+        //Sleep(5);
       end;
     end,
     procedure

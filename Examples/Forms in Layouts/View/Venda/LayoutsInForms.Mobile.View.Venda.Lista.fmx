@@ -1,0 +1,31 @@
+inherited FrmVendaLista: TFrmVendaLista
+  Caption = 'FrmModel1'
+  DesignerMasterStyle = 0
+  inherited lytBackground: TLayout
+    inherited tbcMain: TTabControl
+      Sizes = (
+        380s
+        514s
+        380s
+        514s)
+      inherited tbiMain: TTabItem
+        ExplicitSize.cx = 61.000000000000000000
+        ExplicitSize.cy = 26.000000000000000000
+        inherited lytMainTop: TLayout
+          inherited rctMainTop: TRectangle
+            inherited lblMainTop: TLabel
+              Text = 'Vendas [0]'
+            end
+            inherited btnMainTopRight: TButton
+              OnClick = btnMainTopRightClick
+            end
+          end
+        end
+      end
+      inherited tbiAux: TTabItem
+        ExplicitSize.cx = 55.000000000000000000
+        ExplicitSize.cy = 26.000000000000000000
+      end
+    end
+  end
+end

@@ -120,8 +120,8 @@ begin
 
   FLytBackground := TLayout.Create(Application.MainForm);
   FLytBackground.Visible := False;
-  FLytBackground.Width := aParent.Width;
-  FLytBackground.Height := aParent.Height;
+  FLytBackground.Width := Application.MainForm.ClientWidth;
+  FLytBackground.Height := Application.MainForm.ClientHeight;
 
 {$REGION 'FRctBackground'}
   FRctBackground := TRectangle.Create(Application.MainForm);

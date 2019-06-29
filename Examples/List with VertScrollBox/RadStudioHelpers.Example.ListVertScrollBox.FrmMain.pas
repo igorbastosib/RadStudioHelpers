@@ -97,7 +97,12 @@ begin
             //Por exemplo, eu utilizei "NIL" apenas pq no contexto do exemplo
             //nao eh necessario gerir multi-Threads, mas em outros contextos
             //podera ser necessario trocar NIL por TThread.CurrentThread
+
+            {$IFNDEF IOS}
+            //tive que remover pois estava dando erro de Font, ainda nao solucioando
             TLoading.ChangeMessage('Espere ' + i.ToString);
+            {$ENDIF}
+
             lblIndex.Text := i.ToString;
           end);
       end;
